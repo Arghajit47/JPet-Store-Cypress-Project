@@ -1,0 +1,28 @@
+name: main-merge
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, closed]
+    branches:
+      - main
+jobs:
+  build:
+    name: Build, Run Automation Testcases
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Install dependencies
+        run: npm install
+      - name: Run Automation Testcases
+        run: npm run test
+      - name: Archive test results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: |
+            cypress/JPet_Demo-report
