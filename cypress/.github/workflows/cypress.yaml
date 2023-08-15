@@ -9,6 +9,16 @@ on:
       - main
 jobs:
   build:
+    env:
+      CYPRESS_USER_NAME: secrets.USER_NAME
+      CYPRESS_PASSWORD: secrets.PASSWORD
+      CYPRESS_ADDRESS_1: secrets.ADDRESS_1
+      CYPRESS_ADDRESS_2: secrets.ADDRESS_2
+      CYPRESS_CITY: secrets.CITY
+      CYPRESS_STATE: secrets.STATE
+      CYPRESS_COUNTRY: secrets.COUNTRY
+      CYPRESS_ZIP: secrets.ZIP
+      CYPRESS_PHONE: secrets.PHONE
     name: Build, Run Automation Testcases
     runs-on: ubuntu-latest
     steps:

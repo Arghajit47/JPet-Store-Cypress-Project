@@ -13,7 +13,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "npx cypress run --config-file cypress-config.json --browser chrome --headed"
+    "test": "npx cypress run --config-file cypress-config.json --browser chrome --headless",
+    "test-headed": "npx cypress run --config-file cypress-config.json --browser chrome --headed"
   },
   "keywords": [],
   "author": "",

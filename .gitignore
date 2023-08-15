@@ -6,3 +6,4 @@ node_modules
 cypress.env.json
 cypress/screenshots
 cypress/JPet_Demo-report
+cypress.env.json
